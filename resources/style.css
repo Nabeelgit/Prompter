@@ -1,0 +1,74 @@
+body {
+    width: 100vw;
+    height: 90vh;
+    overflow-x: hidden;
+}
+.navbar-container {
+    display: flex;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    padding-top: 0.5rem;
+    align-items: baseline;
+}
+.fill-available-width {
+    width: -moz-available;
+    width: -webkit-fill-available;
+    width: fill-available;
+}
+.fill-available-height, .content {
+    height: -moz-available;
+    height: -webkit-fill-available;
+    height: fill-available;
+}
+.content {
+    padding-top: 3.5rem;
+    padding-left: 1.5rem;
+    display: flex;
+    background-color: rgba(248,248,252,1);
+}
+.prompt {
+    padding: 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 656px;
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+.prompt:hover {
+    background-color: white;
+}
+.prompt:active {
+    background-color: initial;
+}
+.prompt .top {
+    display: flex;
+}
+.prompt-image {
+    border-radius: 0.5rem;
+    max-height: 60px;
+}
+.prompt-top-text {
+    margin-left: 1rem;
+}
+.prompt-desc {
+    margin-top: 1rem;
+}
+.topics {
+    margin-left: 5rem;
+}
+.topic-pills {
+    max-width: 20rem;
+}
+.rounded-pill {
+    cursor: pointer;
+}
+.text-bg-pink {
+    color: white;
+    background-color: palevioletred;
+}
+.text-bg-brown {
+    color: white;
+    background-color: rgb(108, 53, 2);
+}
