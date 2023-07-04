@@ -25,24 +25,41 @@
 </nav>
   <div class="content">
     <div class="prompts-display">
-        <a class="prompt">
+        <?php
+        require './vendor/autoload.php';
+        $conn = new MongoDB\Client("mongodb://localhost:27017");
+        $table = $conn->prompter->prompts;
+
+        $match = $table->find([], ['sort' => ['_id' => -1]]);
+        $topic_classes = ['Fitness' => 'text-bg-primary', 'Health' => 'text-bg-danger', 'Research' => 'text-bg-success', 'Writing' => 'text-bg-light border border-black', 'Cooking' => 'text-bg-warning', 'Programming' => 'text-bg-info', 'Legal' => 'text-bg-dark', 'Music' => 'text-bg-secondary', 'Relationship' => 'text-bg-pink', 'Buisness' => 'text-bg-brown'];
+        foreach($match as $prompt){
+          ?>
+          <a class="prompt" href="./prompt/?id=<?php echo $prompt['id']?>">
             <div class="top">
                 <div class="prompt-image-div">
-                    <img src="prompter.webp" class="prompt-image">
+                    <img src="./images/<?php echo $prompt['img']?>" class="prompt-image">
                 </div>
                 <div class="prompt-top-text">
-                    <h3>Personal trainer</h3>
+                    <h3><?php echo htmlspecialchars($prompt['name'])?></h3>
                     <div class="prompt-topics">
-                        <span class="badge rounded-pill text-bg-primary">Fitness</span>
-                        <span class="badge rounded-pill text-bg-danger">Health</span>
-                        <span class="badge rounded-pill text-bg-success">Research</span>
+                        <?php
+                        $topics = explode(',', $prompt['topics']);
+                        foreach($topics as $topic){
+                          ?>
+                            <span class="badge rounded-pill <?php echo $topic_classes[$topic]?>"><?php echo $topic?></span>
+                          <?php
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
             <p class="prompt-desc">
-                Embark on an extraordinary fitness journey with the perfect fitness LLM as your guide. Discover personalized guidance tailored to your goals, fitness...
+              <?php echo htmlspecialchars($prompt['prompt'])?>
             </p>
-        </a>
+          </a>
+          <?php
+        }
+        ?>
     </div>
     <div class="topics">
         <h5>Topics</h5>

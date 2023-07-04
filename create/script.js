@@ -56,7 +56,11 @@ document.getElementById('create-form').addEventListener('submit', function(e){
             return response.text();
         })
         .then(function(data) {
-            if(data == '0'){
+            if (data == '1'){
+                alert('Submitted!');
+                window.location = '../';
+            }
+            else {
                 alert('An error occurred');
             }
         })
