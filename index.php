@@ -16,8 +16,8 @@
         <a class="nav-link" href="./create">Create a prompt</a>
         </li>
     </ul>
-      <form class="d-flex" role="search" method="get" action="./search/index.php">
-        <input class="form-control me-2" type="search" placeholder="Search for prompts..." aria-label="Search">
+      <form class="d-flex" role="search" method="get" action="./search/">
+        <input class="form-control me-2" type="search" placeholder="Search for prompts..." aria-label="Search" name="q">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>

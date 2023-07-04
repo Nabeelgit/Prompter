@@ -46,8 +46,8 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom border-secondary-subtle" style="background-color: white !important">
     <div class="navbar-container">
         <a class="navbar-brand" href="../">Prompter</a>
-        <form class="d-flex" role="search" method="get" action="../search/index.php">
-            <input class="form-control me-2" type="search" placeholder="Search for prompts..." aria-label="Search">
+        <form class="d-flex" role="search" method="get" action="../search/">
+            <input class="form-control me-2" type="search" placeholder="Search for prompts..." aria-label="Search" name="q">
             <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
         </div>
